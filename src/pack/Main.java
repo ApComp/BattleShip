@@ -51,12 +51,16 @@ public class Main {
 		board[shipRow][shipColumn] = 1;
 	}
 	public static void fire(){
-		int rowFire =(int) user.getDoubleInput("Please input a row to fire upon."):
+		int rowFire =(int) user.getDoubleInput("Please input a row to fire upon.");
 		int columnFire =(int) user.getDoubleInput("Please input a column to fire upon.");
 		if(compboard[rowFire][columnFire] == 1){
 			compboard[rowFire][columnFire] =7;
 			System.out.println("You are Winner!");
+		}else if(compboard[rowFire][columnFire] != 1){
+			System.out.println("You have missed the objective.");
 		}
+		
+	
 	}
 	public static void main(String[] args){
 		
@@ -64,7 +68,7 @@ public class Main {
 		compBoard();
 		playerShip();
 		playerBoard();
-		
+		fire();
 		
 		
 		
