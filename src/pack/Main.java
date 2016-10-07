@@ -10,7 +10,7 @@ public class Main {
 	private static int[][] dummy = new int[10][10];
 	private static UserInput user = new UserInput();
 	private static boolean game = true;
-
+	private static int direction = (int) (Math.random()*10);
 	//Boards
 	public static int playerBoard(){
 		
@@ -44,6 +44,15 @@ public class Main {
 	
 	public static void compRandomShip(){
 		compboard[randomRow][randomColumn] = 1;
+		if(direction>=0 && direction <= 1){
+			
+		}else if(direction >=2 && direction <=4){
+			
+		}else if(direction >=5 && direction <=7){
+			
+		}else if (direction >=8 && direction <=9){
+			
+		}
 	}
 	public static void playerShip(){
 		
