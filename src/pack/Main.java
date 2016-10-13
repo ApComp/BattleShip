@@ -45,13 +45,34 @@ public class Main {
 	public static void compRandomShip(){
 		compboard[randomRow][randomColumn] = 1;
 		if(direction>=0 && direction <= 1){
-			
+			compboard[randomRow-1][randomColumn] = 1;
 		}else if(direction >=2 && direction <=4){
-			
+			compboard[randomRow][randomColumn+1] = 1;
 		}else if(direction >=5 && direction <=7){
-			
+			compboard[randomRow+1][randomColumn] = 1;
 		}else if (direction >=8 && direction <=9){
-			
+			compboard[randomRow][randomColumn-1] = 1;
+		}
+	}
+	
+	public static void checkBound(int row, int col, int type) {
+		if(row >= 10 || row < 0) {
+			 if (type == 0){
+				 playerShip();
+			 }else if(type == 1) {
+				 fire();
+			 }
+		
+		}else{
+			if(col >= 10 || col < 0) {
+				if(type == 0){
+					playerShip();
+				}else if(type == 1) {
+					fire();
+				}
+			}else{
+				
+			}
 		}
 	}
 	public static void playerShip(){
@@ -68,6 +89,7 @@ public class Main {
 		public static void fire(){
 		int rowFire =(int) user.getDoubleInput("Please input a row to fire upon.");
 		int columnFire =(int) user.getDoubleInput("Please input a column to fire upon.");
+		checkBound(rowFire, columnFire, 1);
 		if(compboard[rowFire][columnFire] == 1){
 			compboard[rowFire][columnFire] =7;
 			System.out.println("You are Winner!");
